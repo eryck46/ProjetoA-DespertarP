@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3df637a2f2.js" crossorigin="anonymous"></script>
+    <title>Pizzaria Papitonne - Fogazzas</title>
+</head>
+<body>
+    <header>
+        <div class="content">
+            <div class="logo">
+                <img src="./img/pngtree-cartoon-yellow-pizza-illustration-png-image_4634672-removebg-preview.png" alt="Cupcake">
+                <h3>Pizzas Papitonne</h3>
+            </div>
+            <ul class="list-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="beirutes.html">Beirutes</a></li>
+                <li><a href="pizza.html">Pizzas</a></li>
+                <li><a href="fogazzas.html">Fogazzas</a></li>
+                <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="carrinho.html"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+            <div class="menu-toggle">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+        </div>
+    </header>
+    <section class="cardapio" id="cardapio">
+        <h2>Cardápio</h2>
+        <div class="itens-cardapio">
+            <div class="beirute">
+                <img src="./img/beirute.webp" alt="beirute">
+                <div class="info">
+                    <h3>Beirute Tradicional</h3>
+                    <h4><span>R$15,00</span></h4>
+                    <button class="pedir" onclick="adicionarAoCarrinho('Beirute Tradicional', 15, './img/beirute.webp')">pedir agora</button>
+                </div>   
+            </div>
+            <!-- Adicione mais itens de beirute conforme necessário -->
+            <div class="Fogazza">
+                <img src="./img/fogazza1.jpg" alt="Fogazza">
+                <div class="info">
+                    <h3>Fogazza Tradicional</h3>
+                    <h4><span>R$15,00</span></h4>
+                    <button class="pedir" onclick="adicionarAoCarrinho('Fogazza Tradicional', 15, './img/fogazza1.jpg')">pedir agora</button>
+                </div>   
+            </div>
+            <!-- Adicione mais itens de fogazza conforme necessário -->
+        </div>
+    </section>
+    <section class="footer">
+        <h3>Contatos</h3>
+        <div class="contatos-secao">
+            <div>
+                <i class="fab fa-whatsapp"></i>
+                <span>(11) 94951-6058 </span>
+            </div>
+            <div>
+                <i class="fab fa-instagram"></i>
+                <span>@_pizzaria_papitone</span>
+            </div>
+            <div>
+                <i class="fab fa-facebook-f"></i>
+                <span>Pizzaria Papitone</span>
+            </div>
+        </div>
+        <h4>Desenvolvido por -> Arthur Clécio & Eryck Eleutério</h4>
+    </section>
+    
+      <script>
+    function adicionarAoCarrinho(name, price, imgSrc) {
+        const pedido = {
+            nome: name,
+            preco: price,
+            imagem: imgSrc
+        };
+
+        // Armazenar os dados do pedido em localStorage
+        let pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+        pedidos.push(pedido);
+        localStorage.setItem('pedidos', JSON.stringify(pedidos));
+
+        // Redirecionar para a página do carrinho
+        window.location.href = 'carrinho.html';
+    }
+
+
+    </script>
+</body>
+</html>
